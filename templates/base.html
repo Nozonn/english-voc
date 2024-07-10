@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My English Voc</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>My English Voc to learn</h1>
+    </header>
+    
+    <nav>
+        <a href="" class="select">Home</a>
+        <a href="">Add</a>
+        <a href="">Delete</a>
+    </nav>
+    
+    {% block section %} {% endblock %}
+    
+    
+    <footer>
+
+    </footer>
+</body>
+</html>

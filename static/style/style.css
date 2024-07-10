@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    display: grid;
+    background-color: whitesmoke;
+    grid-template-rows: 1fr 1fr 5fr 2fr;
+
+    grid-template-areas: 
+    "header",
+    "nav",
+    "section",
+    "footer";
+}
+
+header {
+    grid-area: "header";
+    background-color: whitesmoke;
+    color: black;
+    display: grid;
+    place-content: center;
+    min-height: 75px;
+
+    border-bottom: 2px solid black;
+}
+
+
+nav {
+    grid-area: 'nav';
+    background-color: grey;
+    min-height: 50px;
+    height: 100%;
+
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    border-bottom: 2px solid black;
+}
+
+nav > a {
+    margin: 0 10px;
+    text-decoration: 0;
+    font-size: 15px;
+    color: black;
+    transition: 0.5s linear;
+}
+
+nav > a::before{
+
+    content: '>';
+    margin-right: 5px;
+    margin-left: 10px;
+}
+
+nav > a:hover {
+    transform: scale(1.5);
+    opacity: 1;
+    color: black;
+    margin: 0 20px;
+}
+
+
+nav:hover a:not(:hover) {
+    opacity: 0.5;
+    color: whitesmoke;
+}
+
+a.select {
+    color: whitesmoke;
+}
+
+a:not(.select) {
+    opacity: .25;
+}
+
+section {
+    grid-area: "section";
+    background-color: rgb(207, 205, 205);
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+
+    padding: 50px 0;
+
+    border-bottom: 2px solid black;
+}
+
+section > #content {
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 5px 5px gray;
+}
+
+section > #content > h2 {
+    text-decoration: underline;
+    margin-bottom: 10px;
+}
+
+section > #content > ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section > #content > ul > li {
+    width: 75%;
+    margin: 15px;
+    font-size: 20px;
+}
+
+section > #content > ul > li::marker {
+    content: "➡";
+}
+
+section > #content > ul > li::first-letter {
+    text-transform: capitalize;
+}
+
+footer {
+    grid-area: "footer";
+    background-color: whitesmoke;
+    min-height: 100px;
+    height: 100%;
+}
